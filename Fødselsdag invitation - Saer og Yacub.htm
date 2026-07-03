@@ -219,9 +219,9 @@
 </style>
 </head>
 <body>
-    <!-- Preload images for JS access if needed -->
-    <img id="Yacub-img" src="images/Yacub.jpeg" style="display:none;">
-    <img id="Saer-img" src="images/Saer.jpeg" style="display:none;">
+    <!-- Preload images for JS access if needed (direct raw links) -->
+    <img id="Yacub-img" src="https://raw.githubusercontent.com/aghadima4-ctrl/Dimi/main/Yacub.jpeg" style="display:none;">
+    <img id="Saer-img" src="https://raw.githubusercontent.com/aghadima4-ctrl/Dimi/main/Saer.jpeg" style="display:none;">
     
     <div class="max-w-2xl mx-auto my-4 md:my-8">
         <div class="card p-6 md:p-10 lg:p-12">
@@ -236,7 +236,7 @@
             <i class="spider fa-solid fa-spider" style="top: 10%; left: 5%; animation-delay: 0s;"></i>
             <i class="spider fa-solid fa-spider" style="top: 15%; right: 8%; animation-delay: 1s;"></i>
             <i class="spider fa-solid fa-spider" style="bottom: 20%; left: 10%; animation-delay: 2s;"></i>
-            <i class="spider fa-solid fa-spider" style="bottom: 10%; right: 5%; animation-delay: 1.5s;"></i>
+            <i class class="spider fa-solid fa-spider" style="bottom: 10%; right: 5%; animation-delay: 1.5s;"></i>
             
             <div class="relative z-10">
                 <!-- TILLYKKE Banner -->
@@ -270,7 +270,7 @@
                     <div class="flex flex-col items-center">
                         <div class="photo-frame rounded-2xl overflow-hidden w-full aspect-square mb-3">
                             <!-- This should show Yacub (siddende) -->
-                            <img src="images/Yacub.jpeg"
+                            <img src="https://raw.githubusercontent.com/aghadima4-ctrl/Dimi/main/Yacub.jpeg"
                                  alt="Yacub" 
                                  class="w-full h-full object-cover">
                         </div>
@@ -283,7 +283,7 @@
                     <div class="flex flex-col items-center">
                         <div class="photo-frame-2 rounded-2xl overflow-hidden w-full aspect-square mb-3">
                             <!-- This should show Saer (stående) -->
-                            <img src="images/Saer.jpeg"
+                            <img src="https://raw.githubusercontent.com/aghadima4-ctrl/Dimi/main/Saer.jpeg"
                                  alt="Saer" 
                                  class="w-full h-full object-cover">
                         </div>
@@ -364,7 +364,7 @@
     <script>
         function handleRSVP() {
             const message = `
- 🕷️ SPIDERMAN FØDSELSDAGSFEST 🕷️
+🕷️ SPIDERMAN FØDSELSDAGSFEST 🕷️
             
 Vi kommer til Saer & Yacub's fest!
             
@@ -379,10 +379,10 @@ Antal: ___ voksne, ___ børn
                     title: 'RSVP - Saer & Yacub Fødselsdag',
                     text: message
                 }).catch(() => {
-                    alert('Fantastisk! Vi glæder os til at se jer til festen! 🕷️🎉\n\nHusk at give besked på telefon eller SMS.');
+                    alert('Fantastisk! Vi glæder os til at se jer til festen! 🕷️🎉\\n\\nHusk at give besked på telefon eller SMS.');
                 });
             } else {
-                alert('Fantastisk! Vi glæder os til at se jer til festen! 🕷️🎉\n\nHusk at give besked på telefon eller SMS.');
+                alert('Fantastisk! Vi glæder os til at se jer til festen! 🕷️🎉\\n\\nHusk at give besked på telefon eller SMS.');
             }
         }
         
@@ -394,8 +394,5 @@ Antal: ___ voksne, ___ børn
             });
         });
     </script>
-<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)pare[...]</script>
-<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","so[...]
-</script>
 </body>
 </html>
