@@ -220,8 +220,8 @@
 </head>
 <body>
     <!-- Preload images for JS access if needed -->
-    <img id="Yacub-img" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIbGNtcwIQAABtbnRyUkdCIFhZWiAH4gADABQACQAOAB1hY3NwTVNGVAAAAABzYXdzY3RybAAAAAAAAAAAAAAAAAA[...]"/>
-    <img id="Saer-img" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIbGNtcwIQAABtbnRyUkdCIFhZWiAH4gADABQACQAOAB1hY3NwTVNGVAAAAABzYXdzY3RybAAAAAAAAAAAAAAAAAAA[...]"/>
+    <img id="Yacub-img" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIbGNtcwIQAABtbnRyUkdCIFhZWiAH4gADABQACQAOAB1hY3NwTVNGVAAAAABzYXdzY3RybAAAAAAAAAAAAAAAAAA[...][...]" style="display:none;">
+    <img id="Saer-img" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIbGNtcwIQAABtbnRyUkdCIFhZWiAH4gADABQACQAOAB1hY3NwTVNGVAAAAABzYXdzY3RybAAAAAAAAAAAAAAAAAAA[...][...]" style="display:none;">
     
     <div class="max-w-2xl mx-auto my-4 md:my-8">
         <div class="card p-6 md:p-10 lg:p-12">
@@ -266,10 +266,11 @@
                 
                 <!-- Children Photos & Names -->
                 <div class="grid grid-cols-2 gap-4 md:gap-8 mb-6 md:mb-8">
-                    <!-- Saer -->
+                    <!-- Left: seated child (Yacub) -->
                     <div class="flex flex-col items-center">
                         <div class="photo-frame rounded-2xl overflow-hidden w-full aspect-square mb-3">
-                            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIbGNtcwIQAABtbnRyUkdCIFhZWiAH4gADABQACQAOAB1hY3NwTVNGVAAAAABzYXdzY3RybAAAAAAAAA[...]"
+                            <!-- This should show Yacub (siddende) -->
+                            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIbGNtcwIQAABtbnRyUkdCIFhZWiAH4gADABQACQAOAB1hY3NwTVNGVAAAAABzYXdzY3RybAAAAAAAAA[...][...]"
                                  alt="Yacub" 
                                  class="w-full h-full object-cover">
                         </div>
@@ -278,10 +279,11 @@
                         </div>
                     </div>
                     
-                    <!-- Yacub -->
+                    <!-- Right: standing child (Saer) -->
                     <div class="flex flex-col items-center">
                         <div class="photo-frame-2 rounded-2xl overflow-hidden w-full aspect-square mb-3">
-                            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIbGNtcwIQAABtbnRyUkdCIFhZWiAH4gADABQACQAOAB1hY3NwTVNGVAAAAABzYXdzY3RybAAAAAAAAA[...]"
+                            <!-- This should show Saer (stående) -->
+                            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIbGNtcwIQAABtbnRyUkdCIFhZWiAH4gADABQACQAOAB1hY3NwTVNGVAAAAABzYXdzY3RybAAAAAAAAA[...][...]"
                                  alt="Saer" 
                                  class="w-full h-full object-cover">
                         </div>
@@ -392,6 +394,6 @@ Antal: ___ voksne, ___ børn
             });
         });
     </script>
-<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)pare[...]</script>
-<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","so[...]</script>
+<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)pare[...][...]</script>
+<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","so[...][...]</script>
 </html>
