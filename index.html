@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="da">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Spiderman Fødselsdagsfest - Saer & Yacub</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;800&family=Luckiest+Guy&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+    * {margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#0a1628 0%,#1e3a8a 50%,#7f1d1d 100%);min-height:100vh;padding:16px;overflow-x:hidden}
+    .bangers{font-family:'Bangers',cursive;letter-spacing:2px}
+    .luckiest{font-family:'Luckiest Guy',cursive;letter-spacing:1px}
+    .card{background:linear-gradient(135deg,#ffffff 0%,#f8fafc 100%);box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 0 4px #dc2626,0 0 0 8px #1e40af;border-radius:24px;position:relative;overflow:hidden}
+    .web-pattern{position:absolute;top:0;left:0;width:100%;height:100%;opacity:.06;pointer-events:none;background-image:radial-gradient(circle at 20% 20%,transparent 20%,#1e40af 20.5%,#1e40af 22%,transparent 22.5%),radial-gradient(circle at 80% 80%,transparent 20%,#dc2626 20.5%,#dc2626 22%,transparent 22.5%),radial-gradient(circle at 80% 20%,transparent 20%,#1e40af 20.5%,#1e40af 22%,transparent 22.5%),radial-gradient(circle at 20% 80%,transparent 20%,#dc2626 20.5%,#dc2626 22%,transparent 22.5%);background-size:100px 100px}
+    .spider{position:absolute;font-size:1.5rem;color:#dc2626;animation:swing 3s ease-in-out infinite;opacity:.3}
+    @keyframes swing{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(20px) rotate(5deg)}}
+    .web-corner{position:absolute;width:100px;height:100px;opacity:.2}
+    .web-corner-top-left{top:0;left:0;background:radial-gradient(circle at 0 0,transparent 30%,#1e40af 31%,#1e40af 33%,transparent 34%)}
+    .web-corner-top-right{top:0;right:0;background:radial-gradient(circle at 100% 0,transparent 30%,#dc2626 31%,#dc2626 33%,transparent 34%)}
+    .web-corner-bottom-left{bottom:0;left:0;background:radial-gradient(circle at 0 100%,transparent 30%,#dc2626 31%,#dc2626 33%,transparent 34%)}
+    .web-corner-bottom-right{bottom:0;right:0;background:radial-gradient(circle at 100% 100%,transparent 30%,#1e40af 31%,#1e40af 33%,transparent 34%)}
+    @keyframes float{0%,100%{transform:translateY(0px)}50%{transform:translateY(-10px)}}
+    .float{animation:float 3s ease-in-out infinite}
+    @keyframes pulse-grow{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+    .pulse-grow{animation:pulse-grow 2s ease-in-out infinite}
+    .photo-frame{position:relative;border:6px solid #dc2626;box-shadow:0 10px 30px rgba(220,38,38,.3),0 0 0 6px #1e40af;transition:transform .3s ease}
+    .photo-frame:hover{transform:scale(1.05) rotate(-2deg)}
+    .photo-frame-2{position:relative;border:6px solid #1e40af;box-shadow:0 10px 30px rgba(30,64,175,.3),0 0 0 6px #dc2626;transition:transform .3s ease}
+    .photo-frame-2:hover{transform:scale(1.05) rotate(2deg)}
+    .tillykke-banner{background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 100%);transform:rotate(-2deg);box-shadow:0 8px 20px rgba(245,158,11,.4),0 0 0 3px #dc2626}
+    .btn-rsvp{background:linear-gradient(135deg,#dc2626 0%,#991b1b 100%);transition:all .3s ease;box-shadow:0 4px 15px rgba(220,38,38,.4)}
+    .btn-rsvp:hover{transform:translateY(-2px);box-shadow:0 6px 25px rgba(220,38,38,.6);background:linear-gradient(135deg,#ef4444 0%,#dc2626 100%)}
+    @keyframes web-shine{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+    .web-border{background:linear-gradient(90deg,#dc2626,#1e40af,#dc2626);background-size:200% 200%;animation:web-shine 3s ease infinite;height:4px}
+    @media (max-width:640px){.photo-frame,.photo-frame-2{border-width:4px;box-shadow:0 6px 20px rgba(0,0,0,.2),0 0 0 4px currentColor}.web-corner{width:60px;height:60px}}
+    @media print{body{background:white;padding:0}.card{box-shadow:none}.spider{display:none}}
+</style>
+</head>
+<body>
+    <img src="images/Yacub.jpeg" alt="Yacub" style="display:none;">
+    <img src="images/Saer.jpeg" alt="Saer" style="display:none;">
+
+<div class="max-w-2xl mx-auto my-4 md:my-8">
+  <div class="card p-6 md:p-10 lg:p-12">
+    <div class="web-pattern"></div>
+    <div class="web-corner web-corner-top-left"></div>
+    <div class="web-corner web-corner-top-right"></div>
+    <div class="web-corner web-corner-bottom-left"></div>
+    <div class="web-corner web-corner-bottom-right"></div>
+    <i class="spider fa-solid fa-spider" style="top:10%;left:5%;animation-delay:0s"></i>
+    <i class="spider fa-solid fa-spider" style="top:15%;right:8%;animation-delay:1s"></i>
+    <i class="spider fa-solid fa-spider" style="bottom:20%;left:10%;animation-delay:2s"></i>
+    <i class="spider fa-solid fa-spider" style="bottom:10%;right:5%;animation-delay:1.5s"></i>
+
+    <div class="relative z-10">
+      <div class="flex justify-center mb-6 md:mb-8">
+        <div class="tillykke-banner px-8 py-3 md:px-12 md:py-4 rounded-2xl">
+          <h1 class="luckiest text-3xl md:text-5xl text-red-700 text-center drop-shadow-lg">TILLYKKE!</h1>
+        </div>
+      </div>
+
+      <div class="text-center mb-6 md:mb-8">
+        <div class="flex items-center justify-center gap-3 mb-3">
+          <i class="fa-solid fa-spider text-red-600 text-2xl md:text-3xl float"></i>
+          <h2 class="bangers text-4xl md:text-6xl text-blue-800 leading-tight">FØDSELSDAGSFEST</h2>
+          <i class="fa-solid fa-spider text-blue-600 text-2xl md:text-3xl float" style="animation-delay:0.5s"></i>
+        </div>
+        <p class="bangers text-xl md:text-3xl text-red-600"><i class="fa-solid fa-star text-yellow-500"></i> Spiderman Tema <i class="fa-solid fa-star text-yellow-500"></i></p>
+      </div>
+
+      <div class="web-border rounded-full mb-6 md:mb-8"></div>
+
+      <div class="grid grid-cols-2 gap-4 md:gap-8 mb-6 md:mb-8">
+        <div class="flex flex-col items-center">
+          <div class="photo-frame rounded-2xl overflow-hidden w-full aspect-square mb-3">
+            <img src="images/Yacub.jpeg" alt="Yacub" class="w-full h-full object-cover">
+          </div>
+          <div class="bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-lg pulse-grow"><p class="bangers text-xl md:text-3xl text-center">YACUB 2 ÅR</p></div>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <div class="photo-frame-2 rounded-2xl overflow-hidden w-full aspect-square mb-3">
+            <img src="images/Saer.jpeg" alt="Saer" class="w-full h-full object-cover">
+          </div>
+          <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-lg pulse-grow" style="animation-delay:0.3s"><p class="bangers text-xl md:text-3xl text-center">SAER 3 ÅR</p></div>
+        </div>
+      </div>
+
+      <div class="web-border rounded-full mb-6 md:mb-8"></div>
+
+      <div class="bg-gradient-to-br from-blue-50 to-red-50 rounded-2xl p-6 md:p-8 mb-6 border-4 border-dashed border-red-300">
+        <div class="text-center space-y-4">
+          <p class="text-lg md:text-2xl font-bold text-gray-800 leading-relaxed">Du er hermed inviteret til Saer og Yacub fødselsdagsfest</p>
+
+          <div class="bg-white rounded-xl p-4 md:p-6 shadow-inner space-y-3">
+            <div class="flex items-center justify-center gap-2 text-blue-800">
+              <i class="fa-solid fa-calendar-days text-red-600 text-xl md:text-2xl"></i>
+              <p class="text-xl md:text-3xl font-extrabold">d. 23/7 kl 17:00</p>
+            </div>
+            <div class="web-border rounded-full mx-auto w-1/2 my-2"></div>
+            <p class="text-base md:text-xl text-gray-700 font-semibold">Vi fejrer Saer 3 år og Yacub 2 år</p>
+            <div class="flex items-center justify-center gap-2 text-blue-800 pt-2">
+              <i class="fa-solid fa-location-dot text-red-600 text-xl md:text-2xl"></i>
+              <p class="text-lg md:text-2xl font-extrabold">Adressen er Næringen 85 B</p>
+            </div>
+          </div>
+
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg"><p class="text-base md:text-xl font-bold text-gray-800"><i class="fa-solid fa-utensils text-red-600"></i> Kom gerne sulten, der er masser af mad</p></div>
+
+          <p class="text-lg md:text-2xl font-bold text-red-600 pt-2"><i class="fa-solid fa-heart"></i> Vi glæder os til at se jer! <i class="fa-solid fa-heart"></i></p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button onclick="handleRSVP()" class="btn-rsvp text-white bangers text-xl md:text-2xl px-8 py-4 md:px-12 md:py-5 rounded-full inline-flex items-center gap-3"><i class="fa-solid fa-spider"></i> ! <i class="fa-solid fa-spider"></i></button>
+        <p class="text-xs md:text-sm text-gray-600 mt-3 font-semibold">Klik for at give besked</p>
+      </div>
+
+      <div class="mt-8 flex justify-center items-center gap-4 text-red-600 opacity-40"><i class="fa-solid fa-spider text-xl"></i><div class="h-1 w-16 bg-gradient-to-r from-red-600 to-blue-600 rounded-full"></div><i class="fa-solid fa-star text-xl text-yellow-500"></i><div class="h-1 w-16 bg-gradient-to-r from-blue-600 to-red-600 rounded-full"></div><i class="fa-solid fa-spider text-xl"></i></div>
+    </div>
+  </div>
+
+  <div class="text-center mt-4 text-white text-xs md:text-sm opacity-70"><p class="luckiest">Med kærlig hilsen fra Saer & Yacub <i class="fa-solid fa-spider"></i></p></div>
+</div>
+
+<script>
+function handleRSVP(){const message=`🕷️ SPIDERMAN FØDSELSDAGSFEST 🕷️\n\nVi kommer til Saer & Yacub's fest!\n\nDato: 23/7 kl 17:00\nSted: Næringen 85 B\n\nAntal: ___ voksne, ___ børn\n`;
+if(navigator.share){navigator.share({title:'RSVP - Saer & Yacub Fødselsdag',text:message}).catch(()=>{alert('Fantastisk! Vi glæder os til at se jer til festen! 🕷️🎉\\n\\nHusk at give besked på telefon eller SMS.')});}else{alert('Fantastisk! Vi glæder os til at se jer til festen! 🕷️🎉\\n\\nHusk at give besked på telefon eller SMS.')}}
+</script>
+</body>
+</html>
