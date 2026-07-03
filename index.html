@@ -36,8 +36,9 @@
 </style>
 </head>
 <body>
-    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYYXBwbAQAAABtbnRyUkdCIFhZWiAH5gABAAEAAAAAAABhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWFwcGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" alt="Yacub" style="display:none;">
-    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYYXBwbAQAAABtbnRyUkdCIFhZWiAH5gABAAEAAAAAAABhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWFwcGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" alt="Saer" style="display:none;">
+    <!-- Load images from raw.githubusercontent (main branch) to avoid branch-relative issues -->
+    <img id="Yacub-img" src="https://raw.githubusercontent.com/aghadima4-ctrl/Dimi/main/images/Yacub.jpeg" style="display:none;" alt="Yacub">
+    <img id="Saer-img" src="https://raw.githubusercontent.com/aghadima4-ctrl/Dimi/main/images/Saer.jpeg" style="display:none;" alt="Saer">
 
 <div class="max-w-2xl mx-auto my-4 md:my-8">
   <div class="card p-6 md:p-10 lg:p-12">
@@ -72,14 +73,14 @@
       <div class="grid grid-cols-2 gap-4 md:gap-8 mb-6 md:mb-8">
         <div class="flex flex-col items-center">
           <div class="photo-frame rounded-2xl overflow-hidden w-full aspect-square mb-3">
-            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYYXBwbAQAAABtbnRyUkdCIFhZWiAH5gABAAEAAAAAAABhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWFwcGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" alt="Yacub" class="w-full h-full object-cover">
+            <img src="https://raw.githubusercontent.com/aghadima4-ctrl/Dimi/main/images/Yacub.jpeg" alt="Yacub" class="w-full h-full object-cover">
           </div>
           <div class="bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-lg pulse-grow"><p class="bangers text-xl md:text-3xl text-center">YACUB 2 ÅR</p></div>
         </div>
 
         <div class="flex flex-col items-center">
           <div class="photo-frame-2 rounded-2xl overflow-hidden w-full aspect-square mb-3">
-            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYYXBwbAQAAABtbnRyUkdCIFhZWiAH5gABAAEAAAAAAABhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWFwcGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" alt="Saer" class="w-full h-full object-cover">
+            <img src="https://raw.githubusercontent.com/aghadima4-ctrl/Dimi/main/images/Saer.jpeg" alt="Saer" class="w-full h-full object-cover">
           </div>
           <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-lg pulse-grow" style="animation-delay:0.3s"><p class="bangers text-xl md:text-3xl text-center">SAER 3 ÅR</p></div>
         </div>
@@ -104,4 +105,30 @@
             </div>
           </div>
 
-          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg"><p class="text-base md:text-xl font-bold text-gray-800"><i class="fa-solid fa-utensils text-red-600"></i> Kom gern[...]
+          <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg"><p class="text-base md:text-xl font-bold text-gray-800"><i class="fa-solid fa-utensils text-red-600"></i> Kom gerne sulten, der er masser af mad</p></div>
+
+          <p class="text-lg md:text-2xl font-bold text-red-600 pt-2"><i class="fa-solid fa-heart"></i> Vi glæder os til at se jer! <i class="fa-solid fa-heart"></i></p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button onclick="handleRSVP()" class="btn-rsvp text-white bangers text-xl md:text-2xl px-8 py-4 md:px-12 md:py-5 rounded-full inline-flex items-center gap-3"><i class="fa-solid fa-spider"></i> ! <i class="fa-solid fa-spider"></i></button>
+        <p class="text-xs md:text-sm text-gray-600 mt-3 font-semibold">Klik for at give besked</p>
+      </div>
+
+      <div class="mt-8 flex justify-center items-center gap-4 text-red-600 opacity-40"><i class="fa-solid fa-spider text-xl"></i><div class="h-1 w-16 bg-gradient-to-r from-red-600 to-blue-600 rounded-full"></div><i class="fa-solid fa-star text-xl text-yellow-500"></i><div class="h-1 w-16 bg-gradient-to-r from-blue-600 to-red-600 rounded-full"></div><i class="fa-solid fa-spider text-xl"></i></div>
+    </div>
+  </div>
+
+  <div class="text-center mt-4 text-white text-xs md:text-sm opacity-70"><p class="luckiest">Med kærlig hilsen fra Saer & Yacub <i class="fa-solid fa-spider"></i></p></div>
+</div>
+
+<script>
+function handleRSVP(){const message=`🕷️ SPIDERMAN FØDSELSDAGSFEST 🕷️\n\nVi kommer til Saer & Yacub's fest!\n\nDato: 23/7 kl 17:00\nSted: Næringen 85 B\n\nAntal: ___ voksne, ___ børn\n`;
+if(navigator.share){navigator.share({title:'RSVP - Saer & Yacub Fødselsdag',text:message}).catch(()=>{alert('Fantastisk! Vi glæder os til at se jer til festen! 🕷️🎉\\n\\nHusk at give besked på telefon eller SMS.')});}else{alert('Fantastisk! Vi glæder os til at se jer til festen! 🕷️🎉\\n\\nHusk at give besked på telefon eller SMS.')}}
+
+// Add some drop shadow to spiders
+document.addEventListener('DOMContentLoaded', function(){const spiders=document.querySelectorAll('.spider');spiders.forEach(s=>s.style.filter='drop-shadow(0 2px 4px rgba(0,0,0,0.3))');});
+</script>
+</body>
+</html>
