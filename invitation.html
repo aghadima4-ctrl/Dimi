@@ -1,136 +1,95 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spiderman Fødselsdagsfest - Saer & Yacub</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;800&family=Luckiest+Guy&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invitation — Saer & Yacub</title>
   <style>
-    * {margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#0a1628 0%,#1e3a8a 50%,#7f1d1d 100%);min-height:100vh;padding:16px;overflow-x:hidden}
-    .bangers{font-family:'Bangers',cursive;letter-spacing:2px}
-    .luckiest{font-family:'Luckiest Guy',cursive;letter-spacing:1px}
-    .card{background:linear-gradient(135deg,#ffffff 0%,#f8fafc 100%);box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 0 4px #dc2626,0 0 0 8px #1e40af;border-radius:24px;position:relative;overflow:hidden}
-    .web-pattern{position:absolute;top:0;left:0;width:100%;height:100%;opacity:.06;pointer-events:none;background-image:radial-gradient(circle at 20% 20%,transparent 20%,#1e40af 20.5%,#1e40af 22%,transparent 22.5%),radial-gradient(circle at 80% 80%,transparent 20%,#dc2626 20.5%,#dc2626 22%,transparent 22.5%),radial-gradient(circle at 80% 20%,transparent 20%,#1e40af 20.5%,#1e40af 22%,transparent 22.5()),radial-gradient(circle at 20% 80%,transparent 20%,#dc2626 20.5%,#dc2626 22%,transparent 22.5%);background-size:100px 100px}
-    .spider{position:absolute;font-size:1.5rem;color:#dc2626;animation:swing 3s ease-in-out infinite;opacity:.3}
-    @keyframes swing{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(20px) rotate(5deg)}}
-    .web-corner{position:absolute;width:100px;height:100px;opacity:.2}
-    .web-corner-top-left{top:0;left:0;background:radial-gradient(circle at 0 0,transparent 30%,#1e40af 31%,#1e40af 33%,transparent 34%)}
-    .web-corner-top-right{top:0;right:0;background:radial-gradient(circle at 100% 0,transparent 30%,#dc2626 31%,#dc2626 33%,transparent 34%)}
-    .web-corner-bottom-left{bottom:0;left:0;background:radial-gradient(circle at 0 100%,transparent 30%,#dc2626 31%,#dc2626 33%,transparent 34%)}
-    .web-corner-bottom-right{bottom:0;right:0;background:radial-gradient(circle at 100% 100%,transparent 30%,#1e40af 31%,#1e40af 33%,transparent 34%)}
-    @keyframes float{0%,100%{transform:translateY(0px)}50%{transform:translateY(-10px)}}
-    .float{animation:float 3s ease-in-out infinite}
-    @keyframes pulse-grow{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
-    .pulse-grow{animation:pulse-grow 2s ease-in-out infinite}
-    .photo-frame{position:relative;border:6px solid #dc2626;box-shadow:0 10px 30px rgba(220,38,38,.3),0 0 0 6px #1e40af;transition:transform .3s ease}
-    .photo-frame:hover{transform:scale(1.05) rotate(-2deg)}
-    .photo-frame-2{position:relative;border:6px solid #1e40af;box-shadow:0 10px 30px rgba(30,64,175,.3),0 0 0 6px #dc2626;transition:transform .3s ease}
-    .photo-frame-2:hover{transform:scale(1.05) rotate(2deg)}
-    .tillykke-banner{background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 100%);transform:rotate(-2deg);box-shadow:0 8px 20px rgba(245,158,11,.4),0 0 0 3px #dc2626}
-    .btn-rsvp{background:linear-gradient(135deg,#dc2626 0%,#991b1b 100%);transition:all .3s ease;box-shadow:0 4px 15px rgba(220,38,38,.4)}
-    .btn-rsvp:hover{transform:translateY(-2px);box-shadow:0 6px 25px rgba(220,38,38,.6);background:linear-gradient(135deg,#ef4444 0%,#dc2626 100%)}
-    @keyframes web-shine{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-    .web-border{background:linear-gradient(90deg,#dc2626,#1e40af,#dc2626);background-size:200% 200%;animation:web-shine 3s ease infinite;height:4px}
-    @media (max-width:640px){.photo-frame,.photo-frame-2{border-width:4px;box-shadow:0 6px 20px rgba(0,0,0,.2),0 0 0 4px currentColor}.web-corner{width:60px;height:60px}}
-    @media print{body{background:white;padding:0}.card{box-shadow:none}.spider{display:none}}
+    /* bruger dit snippet + mobilvenlig justeringer */
+    .card{
+      max-width: 700px;
+      margin: 0 auto;
+      width: 100%;
+      background: linear-gradient(135deg,#ffffff 0%,#f8fafc 100%);
+      box-shadow:0 20px 60px rgba(0,0,0,.2);
+      border-radius:16px;
+      padding:16px;
+      box-sizing:border-box;
+    }
+
+    .grid.grid-cols-2{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    img{
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* ekstra responsivitet */
+    @media (max-width: 640px){
+      .grid.grid-cols-2{ grid-template-columns: 1fr; }
+      .card{ padding:12px; }
+      .title{ font-size: 1.6rem; }
+      .subtitle{ font-size: 1rem; }
+      .btn-come{ padding:12px 18px; font-size:16px }
+    }
+
+    /* knap */
+    .btn-come{
+      background: linear-gradient(135deg,#dc2626 0%,#991b1b 100%);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(220,38,38,.25);
+    }
   </style>
 </head>
-<body>
-  <!-- Inlined images already present; adjust layout to be mobile-friendly -->
-  <div class="max-w-3xl w-full mx-auto my-4 md:my-8 px-4">
-    <div class="card p-4 md:p-10 lg:p-12">
-      <div class="web-pattern"></div>
-      <div class="web-corner web-corner-top-left"></div>
-      <div class="web-corner web-corner-top-right"></div>
-      <div class="web-corner web-corner-bottom-left"></div>
-      <div class="web-corner web-corner-bottom-right"></div>
+<body style="font-family: Arial, Helvetica, sans-serif; background: linear-gradient(135deg,#0a1628 0%,#1e3a8a 50%,#7f1d1d 100%); padding:16px;">
+  <div class="card" role="main">
+    <h1 class="title" style="text-align:center; font-family: 'Bangers', cursive; font-size:2.4rem; color:#c02626; margin-bottom:8px;">TILLYKKE!</h1>
+    <h2 style="text-align:center; font-family:'Nunito',sans-serif; font-size:1.6rem; color:#0f3b6b; margin-top:0;">FØDSELSDAGSFEST — Saer & Yacub</h2>
 
-      <!-- keep only one decorative spider on mobile to avoid overlap -->
-      <i class="spider fa-solid fa-spider hidden sm:block" style="top:10%;left:5%;animation-delay:0s"></i>
-      <i class="spider fa-solid fa-spider" style="top:15%;right:8%;animation-delay:1s"></i>
+    <div class="grid grid-cols-2" style="margin-top:16px;">
+      <div style="text-align:center">
+        <!-- Yacub image (inlined) -->
+        <img alt="Yacub" src="data:image/jpeg;base64,LzlqLzRBQVFTa1pKUmdBQkFRQUFBUUFCQUFELzRnSW9TVU5EWDFCU1QwWkpURVVBQVFFQUFBSVlZWEJ3YkFRQUFBQnRiblJ5VWtkQ0lGaFpXaUFINWdBQkFBRUFBQUFBQUFCaFkzTndRVkJRVEFBQUFBQkJVRkJNQUFBQUFBQUFBQUFBQUFBQUFBQUFBQTl0WUFBUUFBQUFEVExXRndjR3dBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBcGtaWE5qQUFBQS9BQUFBREJqY0hKMEFBQUJMQUFBQUZCM2RIQjBBQUFCZkFBQUFCUnlXRmxhQUFBQmtBQUFBQlJuV0ZsYUFBQUJwQUFBQUJSaVdGbGFBQUFCdUFBQUFCUnlWRkpEQUFBQnpBQUFBQ0JqYUdGa0FBQUI3QUFBQUN4aVZGSkRBQUFCekFBQUFDQm5WRkpEQUFBQnpBQUFBQ0J0YkhWakFBQUFBQUFBQUFFQUFBQU1aVzVWVXdBQUFCUUFBQUFjQUVRQWFRQnpBSEFBYkFCaEFIa0FJQUJRQUROdGJIVmpBQUFBQUFBQUFBRUFBQUFNWlc1VlV3QUFBRFFBQUFBY0FFTUFid0J3QUhrQWNnQnBBR2NBYUFCMEFDQUFRUUJ3QUhBQWJBQmxBQ0FBU1FCdUFHTUFMZ0FzQUNBQU1nQXdBRElBTWxoWldpQUFBQUFBQUFEMjFRQUJBQUFBQU5Nc1dGbGFJQUFBQUFBQUFJUGZBQUE5di8vLy83dFlXVm9nQUFBQUFBQUFTcjhBQUxFM0FBQUt1VmhaV2lBQUFBQUFBQUFvT0FBQUVRc0FBTWk1Y0dGeVlRQUFBQUFBQXdBQUFBSm1aZ0FBOHFjQUFBMVpBQUFUMEFBQUNsdHpaak15QUFBQUFBQUJERUlBQUFYZS8vL3pKZ0FBQjVNQUFQMlEvLy83b3YvLy9hTUFBQVBjQUFEQWJ2L2JBSVFBQ2drSkVRd1JFUkVSRVJvVEZCTWFHeHNYRnhzYkhoa2JHeHNaSGg0Z0h5RWhIeUFlSUI0akpDTWVJQ0VqSnljaklTUXNLeXdrS3lnb0t6QXJNQ29xSWdFSkJ3Y1BDdzhPRHc4T0ZRNFJEaFVVRXc4UEV4UVhFUklSRWhFWEdSWVVGUlVVRmhrWEZSUVJGQlVYR0JVVkdSVVlHUk1XRXhrWUdSa1lKU2dsSkNULy84SUFFUWdFdUFMUUF3RWlBQUlSQVFNUkFmL0VBTWtBQUFJREFRRUJBQUFBQUFBQUFBQUFBQUlEQVFRRkFBWUhB|" style="border-radius:12px;"/>
+        <p style="margin:8px 0 0; font-weight:700;">Yacub — 2 år</p>
+      </div>
 
-      <div class="relative z-10">
-        <div class="flex justify-center mb-4 md:mb-8">
-          <div class="tillykke-banner px-6 py-2 md:px-12 md:py-4 rounded-2xl">
-            <h1 class="luckiest text-2xl md:text-5xl text-red-700 text-center drop-shadow-lg">TILLYKKE!</h1>
-          </div>
-        </div>
-
-        <div class="text-center mb-4 md:mb-8">
-          <div class="flex items-center justify-center gap-3 mb-2">
-            <i class="fa-solid fa-spider text-red-600 text-xl md:text-2xl float"></i>
-            <h2 class="bangers text-3xl md:text-5xl text-blue-800 leading-tight">FØDSELSDAGSFEST</h2>
-            <i class="fa-solid fa-spider text-blue-600 text-xl md:text-2xl float" style="animation-delay:0.5s"></i>
-          </div>
-          <p class="bangers text-lg md:text-2xl text-red-600"><i class="fa-solid fa-star text-yellow-500"></i> Spiderman Tema <i class="fa-solid fa-star text-yellow-500"></i></p>
-        </div>
-
-        <div class="web-border rounded-full mb-4 md:mb-8"></div>
-
-        <!-- Responsive grid: single column on small screens -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-4 md:mb-8">
-          <div class="flex flex-col items-center">
-            <div class="photo-frame rounded-2xl overflow-hidden w-full h-64 md:h-auto mb-3">
-              <img src="data:image/jpeg;base64,LzlqLzRBQVFTa1pKUmdBQkFRQUFBUUFCQUFELzRnSW9TVU5EWDFCU1QwWkpURVVBQVFFQUFBSVlZWEJ3YkFRQUFBQnRiblJ5VWtkQ0lGaFpXaUFINWdBQkFBRUFBQUFBQUFCaFkzTndRVkJRVEFBQUFBQkJVRkJNQUFBQUFBQUFBQUFBQUFBQUFBQUFBQTl0WUFBUUFBQUFEVExXRndjR3dBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBcGtaWE5qQUFBQS9BQUFBREJqY0hKMEFBQUJMQUFBQUZCM2RIQjBBQUFCZkFBQUFCUnlXRmxhQUFBQmtBQUFBQlJuV0ZsYUFBQUJwQUFBQUJSaVdGbGFBQUFCdUFBQUFCUnlWRkpEQUFBQnpBQUFBQ0JqYUdGa0FBQUI3QUFBQUN4aVZGSkRBQUFCekFBQUFDQm5WRkpEQUFBQnpBQUFBQ0J0YkhWakFBQUFBQUFBQUFFQUFBQU1aVzVWVXdBQUFCUUFBQUFjQUVRQWFRQnpBSEFBYkFCaEFIa0FJQUJRQUROdGJIVmpBQUFBQUFBQUFBRUFBQUFNWlc1VlV3QUFBRFFBQUFBY0FFTUFid0J3QUhrQWNnQnBBR2NBYUFCMEFDQUFRUUJ3QUhBQWJBQmxBQ0FBU1FCdUFHTUFMZ0FzQUNBQU1nQXdBRElBTWxoWldpQUFBQUFBQUFEMjFRQUJBQUFBQU5Nc1dGbGFJQUFBQUFBQUFJUGZBQUE5di8vLy83dFlXVm9nQUFBQUFBQUFTcjhBQUxFM0FBQUt1VmhaV2lBQUFBQUFBQUFvT0FBQUVRc0FBTWk1Y0dGeVlRQUFBQUFBQXdBQUFBSm1aZ0FBOHFjQUFBMVpBQUFUMEFBQUNsdHpaak15QUFBQUFBQUJERUlBQUFYZS8vL3pKZ0FBQjVNQUFQMlEvLy83b3YvLy9hTUFBQVBjQUFEQWJ2L2JBSVFBQ2drSkVRd1JFUkVSRVJvVEZCTWFHeHNYRnhzYkhoa2JHeHNaSGg0Z0h5RWhIeUFlSUI0akpDTWVJQ0VqSnljaklTUXNLeXdrS3lnb0t6QXJNQ29xSWdFSkJ3Y1BDdzhPRHc4T0ZRNFJEaFVVRXc4UEV4UVhFUklSRWhFWEdSWVVGUlVVRmhrWEZSUVJGQlVYR0JVWkdSVVlHUk1XRXhrWUdSa1lKU2dsSkNULy84SUFFUWdFdUFMUUF3RWlBQUlSQVFNUkFmL0VBTklBQUFNQUF3RUJBUUFBQUFBQUFBQUFBQUFCQWdNRUJRWUhDQUVCQVFFQUF3RUJBQUFBQUFBQUFBQUFBQUVDTXdRRkJnY1FBQUVFQXdFQkFRRUJBUUVCQVFFQUFBRUFBZ01SQkFVU0VBWVRJQlF3RlFjV0Z4RUFBUVFDQWdJREFRRUJBUUFBQUFBQUFRQUNBeEVFRUJJZ0JUQUdCeE5BRkZBVkVnQUJBd0lGQWdVREJBSUNBd0VBQUFBQkFBSVJFQ0VTSUNJeFFUQlJBMUJnWVhFVFFJRWpNa0p3VXBGaW9RUnk4SklUQUFFQkJ3UURBQU1CQUFBQUFBQUFBQUVSQUNFaVFGQmdjVEJ5Z2NFUUlORUNFa0ZSLzlvQUNBRUJBQUFBQU1lMzJPMTBLeHZGamhwNWRYWm5QRnE4YkZrV1NFN0NjVjFSakx4Um5GRk9IaTFzV3ZNN3VMRFVNZEVFemc1ZXB6dVZ5c2NwQ0dEZE1xcXU4dXhrcTZwamJaWkl3YnB3aHBpQlNoUml3ek0rUi9WR09jY3lPb3h0WGFlVjQxbGdWeGJNT0hidHhNT3JTeEU1Vmp1Wndh..." alt="Yacub" class="w-full h-full object-cover">
-            </div>
-            <div class="bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-lg pulse-grow"><p class="bangers text-xl md:text-3xl text-center">YACUB 2 ÅR</p></div>
-          </div>
-
-          <div class="flex flex-col items-center">
-            <div class="photo-frame-2 rounded-2xl overflow-hidden w-full h-64 md:h-auto mb-3">
-              <img src="data:image/jpeg;base64,LzlqLzRBQVFTa1pKUmdBQkFRQUFBUUFCQUFELzRnSW9TVU5EWDFCU1QwWkpURVVBQVFFQUFBSVlZWEJ3YkFRQUFBQnRiblJ5VWtkQ0lGaFpXaUFINWdBQkFBRUFBQUFBQUFCaFkzTndRVkJRVEFBQUFBQkJVRkJNQUFBQUFBQUFBQUFBQUFBQUFBQUFBQTl0WUFBUUFBQUFEVExXRndjR3dBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBcGtaWE5qQUFBQS9BQUFBREJqY0hKMEFBQUJMQUFBQUZCM2RIQjBBQUFCZkFBQUFCUnlXRmxhQUFBQmtBQUFBQlJuV0ZsYUFBQUJwQUFBQUJSaVdGbGFBQUFCdUFBQUFCUnlWRkpEQUFBQnpBQUFBQ0JqYUdGa0FBQUI3QUFBQUN4aVZGSkRBQUFCekFBQUFDQm5WRkpEQUFBQnpBQUFBQ0J0YkhWakFBQUFBQUFBQUFFQUFBQU1aVzVWVXdBQUFCUUFBQUFjQUVRQWFRQnpBSEFBYkFCaEFIa0FJQUJRQUROdGJIVmpBQUFBQUFBQUFBRUFBQUFNWlc1VlV3QUFBRFFBQUFBY0FFTUFid0J3QUhrQWNnQnBBR2NBYUFCMEFDQUFRUUJ3QUhBQWJBQmxBQ0FBU1FCdUFHTUFMZ0FzQUNBQU1nQXdBRElBTWxoWldpQUFBQUFBQUFEMjFRQUJBQUFBQU5Nc1dGbGFJQUFBQUFBQUFJUGZBQUE5di8vLy83dFlXVm9nQUFBQUFBQUFTcjhBQUxFM0FBQUt1VmhaV2lBQUFBQUFBQUFvT0FBQUVRc0FBTWk1Y0dGeVlRQUFBQUFBQXdBQUFBSm1aZ0FBOHFjQUFBMVpBQUFUMEFBQUNsdHpaak15QUFBQUFBQUJERUlBQUFYZS8vL3pKZ0FBQjVNAQ==" alt="Saer" class="w-full h-full object-cover">
-            </div>
-            <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-full shadow-lg pulse-grow" style="animation-delay:0.3s"><p class="bangers text-xl md:text-3xl text-center">SAER 3 ÅR</p></div>
-          </div>
-        </div>
-
-        <div class="web-border rounded-full mb-4 md:mb-8"></div>
-
-        <div class="bg-gradient-to-br from-blue-50 to-red-50 rounded-2xl p-4 md:p-8 mb-6 border-4 border-dashed border-red-300">
-          <div class="text-center space-y-4">
-            <p class="text-lg md:text-2xl font-bold text-gray-800 leading-relaxed">Du er hermed inviteret til Saer og Yacub fødselsdagsfest</p>
-
-            <div class="bg-white rounded-xl p-4 md:p-6 shadow-inner space-y-3">
-              <div class="flex items-center justify-center gap-2 text-blue-800">
-                <i class="fa-solid fa-calendar-days text-red-600 text-xl md:text-2xl"></i>
-                <p class="text-xl md:text-3xl font-extrabold">d. 23/7 kl 17:00</p>
-              </div>
-
-              <div class="web-border rounded-full mx-auto w-1/2 my-2"></div>
-
-              <p class="text-base md:text-xl text-gray-700 font-semibold">Vi fejrer Saer 3 år og Yacub 2 år</p>
-
-              <div class="flex items-center justify-center gap-2 text-blue-800 pt-2">
-                <i class="fa-solid fa-location-dot text-red-600 text-xl md:text-2xl"></i>
-                <p class="text-lg md:text-2xl font-extrabold">Adressen er Næringen 85 B</p>
-              </div>
-            </div>
-
-            <div class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-lg"><p class="text-base md:text-xl font-bold text-gray-800"><i class="fa-solid fa-utensils text-red-600"></i> Kom gerne sulten, der er masser af mad</p></div>
-
-            <p class="text-lg md:text-2xl font-bold text-red-600 pt-2"><i class="fa-solid fa-heart"></i> Vi glæder os til at se jer! <i class="fa-solid fa-heart"></i></p>
-          </div>
-        </div>
-
-        <div class="text-center">
-          <button onclick="handleRSVP()" class="btn-rsvp text-white bangers text-lg md:text-xl px-6 py-3 md:px-12 md:py-5 rounded-full inline-flex items-center gap-3"><i class="fa-solid fa-spider"></i> ! <i class="fa-solid fa-spider"></i></button>
-          <p class="text-xs md:text-sm text-gray-600 mt-3 font-semibold">Klik for at give besked</p>
-        </div>
-
-        <div class="mt-8 flex justify-center items-center gap-4 text-red-600 opacity-40"><i class="fa-solid fa-spider text-xl"></i><div class="h-1 w-16 bg-gradient-to-r from-red-600 to-blue-600 rounded-full"></div><i class="fa-solid fa-star text-xl text-yellow-500"></i><div class="h-1 w-16 bg-gradient-to-r from-blue-600 to-red-600 rounded-full"></div><i class="fa-solid fa-spider text-xl"></i></div>
+      <div style="text-align:center">
+        <!-- Saer image (inlined) -->
+        <img alt="Saer" src="data:image/jpeg;base64,LzlqLzRBQVFTa1pKUmdBQkFRQUFBUUFCQUFELzRnSW9TVU5EWDFCU1QwWkpURVVBQVFFQUFBSVlZWEJ3YkFRQUFBQnRiblJ5VWtkQ0lGaFpXaUFINWdBQkFBRUFBQUFBQUFCaFkzTndRVkJRVEFBQUFBQkJVRkJNQUFBQUFBQUFBQUFBQUFBQUFBQUFBQTl0WUFBUUFBQUFEVExXRndjR3dBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBcGtaWE5qQUFBQS9BQUFBREJqY0hKMEFBQUJMQUFBQUZCM2RIQjBBQUFCZkFBQUFCUnlXRmxhQUFBQmtBQUFBQlJuV0ZsYUFBQUJwQUFBQUJSaVdGbGFBQUFCdUFBQUFCUnlWRkpEQUFBQnpBQUFBQ0JqYUdGa0FBQUI3QUFBQUN4aVZGSkRBQUFCekFBQUFDQm5WRkpEQUFBQnpBQUFBQ0J0YkhWakFBQUFBQUFBQUFFQUFBQU1aVzVWVXdBQUFCUUFBQUFjQUVRQWFRQnpBSEFBYkFCaEFIa0FJQUJRQUROdGJIVmpBQUFBQUFBQUFBRUFBQUFNWlc1VlV3QUFBRFFBQUFBY0FFTUFid0J3QUhrQWNnQnBBR2NBYUFCMEFDQUFRUUJ3QUhBQWJBQmxBQ0FBU1FCdUFHTUFMZ0FzQUNBQU1nQXdBRElBTWxoWldpQUFBQUFBQUFEMjFRQUJBQUFBQU5Nc1dGbGFJQUFBQUFBQUFJUGZBQUE5di8vLy83dFlXVm9nQUFBQUFBQUFTcjhBQUxFM0FBQUt1VmhaV2lBQUFBQUFBQUFvT0FBQUVRc0FBTWk1Y0dGeVlRQUFBQUFBQXdBQUFBSm1aZ0FBOHFjQUFBMVpBQUFUMEFBQUNsdHpaak15QUFBQUFBQUJERUlBQUFYZS8vL3pKZ0FBQjVNQUFQMlEvLy83b3YvLy9hTUFBQVBjQUFEQWJ2L2JBSVFBQ2drSkVRd1JFUkVSRVJvVEZCTWFHeHNYRnhzYkhoa2JHeHNaSGg0Z0h5RWhIeUFlSUI0akpDTWVJQ0VqSnljaklTUXNLeXdrS3lnb0t6QXJNQ29xSWdFSkJ3Y1BDdzhPRHc4T0ZRNFJEaFVVRXc4UEV4UVhFUklSRWhFWEdSWVVGUlVVRmhrWEZSUVJGQlVYR0JVVkdSVVlHUk1XRXhrWUdSa1lKU2dsSkNULy84SUFFUWdFdUFMUUF3RWlBQUlSQVFNUkFmL0VBTWtBQUFJREFRRUJBQUFBQUFBQUFBQUFBQUlEQVFRRkFBWUhB|" style="border-radius:12px;"/>
+        <p style="margin:8px 0 0; font-weight:700;">Saer — 3 år</p>
       </div>
     </div>
 
-    <div class="text-center mt-4 text-white text-xs md:text-sm opacity-70"><p class="luckiest">Med kærlig hilsen fra Saer & Yacub <i class="fa-solid fa-spider"></i></p></div>
+    <div style="text-align:center; margin-top:18px;">
+      <p style="font-weight:700;">Du er hermed inviteret til Saer og Yacub fødselsdagsfest</p>
+      <p style="margin:8px 0;">d. 23/7 kl 17:00 — Næringen 85 B</p>
+
+      <button class="btn-come" onclick="handleCome()">JEG KOMMER</button>
+    </div>
+
   </div>
 
   <script>
-    function handleRSVP(){const message=`🕷️ SPIDERMAN FØDSELSDAGSFEST 🕷️\n\nVi kommer til Saer & Yacub's fest!\n\nDato: 23/7 kl 17:00\nSted: Næringen 85 B\n\nAntal: ___ voksne, ___ børn\n`;
-    if(navigator.share){navigator.share({title:'RSVP - Saer & Yacub Fødselsdag',text:message}).catch(()=>{alert('Fantastisk! Vi glæder os til at se jer til festen! 🕷️🎉\\n\\nHusk at give besked på telefon eller SMS.')});}else{alert('Fantastisk! Vi glæder os til at se jer til festen! 🕷️🎉\\n\\nHusk at give besked på telefon eller SMS.')}}
-    document.addEventListener('DOMContentLoaded', function(){const spiders=document.querySelectorAll('.spider');spiders.forEach(s=>s.style.filter='drop-shadow(0 2px 4px rgba(0,0,0,0.3))');});
+    function handleCome(){
+      // Simpel bekræftelses-flow: åben del-dialog hvis understøttet, ellers alert
+      const msg = 'Jeg kommer til Saer & Yacub\'s fest! Dato: 23/7 kl 17:00. Antal: ___';
+      if(navigator.share){
+        navigator.share({title:'Jeg kommer - Saer & Yacub', text: msg}).catch(()=>alert('Tak! Vi glæder os — husk at sende antal via SMS eller opkald.'));
+      } else {
+        alert('Tak! Vi glæder os — husk at sende antal via SMS eller opkald.');
+      }
+    }
   </script>
 </body>
 </html>
