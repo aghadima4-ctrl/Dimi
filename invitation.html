@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="da">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Spiderman Fødselsdagsfest - Saer & Yacub</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;800&family=Luckiest+Guy&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+    * {margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#0a1628 0%,#1e3a8a 50%,#7f1d1d 100%);min-height:100vh;padding:16px;overflow-x:hidden}
+    .bangers{font-family:'Bangers',cursive;letter-spacing:2px}
+    .luckiest{font-family:'Luckiest Guy',cursive;letter-spacing:1px}
+    .card{background:linear-gradient(135deg,#ffffff 0%,#f8fafc 100%);box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 0 4px #dc2626,0 0 0 8px #1e40af;border-radius:24px;position:relative;overflow:hidden}
+    .web-pattern{position:absolute;top:0;left:0;width:100%;height:100%;opacity:.06;pointer-events:none;background-image:radial-gradient(circle at 20% 20%,transparent 20%,#1e40af 20.5%,#1e40af 22%,transparent 22.5%),radial-gradient(circle at 80% 80%,transparent 20%,#dc2626 20.5%,#dc2626 22%,transparent 22.5%),radial-gradient(circle at 80% 20%,transparent 20%,#1e40af 20.5%,#1e40af 22%,transparent 22.5%),radial-gradient(circle at 20% 80%,transparent 20%,#dc2626 20.5%,#dc2626 22%,transparent 22.5%);background-size:100px 100px}
+    .spider{position:absolute;font-size:1.5rem;color:#dc2626;animation:swing 3s ease-in-out infinite;opacity:.3}
+    @keyframes swing{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(20px) rotate(5deg)}}
+    .web-corner{position:absolute;width:100px;height:100px;opacity:.2}
+    .web-corner-top-left{top:0;left:0;background:radial-gradient(circle at 0 0,transparent 30%,#1e40af 31%,#1e40af 33%,transparent 34%)}
+    .web-corner-top-right{top:0;right:0;background:radial-gradient(circle at 100% 0,transparent 30%,#dc2626 31%,#dc2626 33%,transparent 34%)}
+    .web-corner-bottom-left{bottom:0;left:0;background:radial-gradient(circle at 0 100%,transparent 30%,#dc2626 31%,#dc2626 33%,transparent 34%)}
+    .web-corner-bottom-right{bottom:0;right:0;background:radial-gradient(circle at 100% 100%,transparent 30%,#1e40af 31%,#1e40af 33%,transparent 34%)}
+    @keyframes float{0%,100%{transform:translateY(0px)}50%{transform:translateY(-10px)}}
+    .float{animation:float 3s ease-in-out infinite}
+    @keyframes pulse-grow{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+    .pulse-grow{animation:pulse-grow 2s ease-in-out infinite}
+    .photo-frame{position:relative;border:6px solid #dc2626;box-shadow:0 10px 30px rgba(220,38,38,.3),0 0 0 6px #1e40af;transition:transform .3s ease}
+    .photo-frame:hover{transform:scale(1.05) rotate(-2deg)}
+    .photo-frame-2{position:relative;border:6px solid #1e40af;box-shadow:0 10px 30px rgba(30,64,175,.3),0 0 0 6px #dc2626;transition:transform .3s ease}
+    .photo-frame-2:hover{transform:scale(1.05) rotate(2deg)}
+    .tillykke-banner{background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 100%);transform:rotate(-2deg);box-shadow:0 8px 20px rgba(245,158,11,.4),0 0 0 3px #dc2626}
+    .btn-rsvp{background:linear-gradient(135deg,#dc2626 0%,#991b1b 100%);transition:all .3s ease;box-shadow:0 4px 15px rgba(220,38,38,.4)}
+    .btn-rsvp:hover{transform:translateY(-2px);box-shadow:0 6px 25px rgba(220,38,38,.6);background:linear-gradient(135deg,#ef4444 0%,#dc2626 100%)}
+    @keyframes web-shine{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+    .web-border{background:linear-gradient(90deg,#dc2626,#1e40af,#dc2626);background-size:200% 200%;animation:web-shine 3s ease infinite;height:4px}
+    @media (max-width:640px){.photo-frame,.photo-frame-2{border-width:4px;box-shadow:0 6px 20px rgba(0,0,0,.2),0 0 0 4px currentColor}.web-corner{width:60px;height:60px}}
+    @media print{body{background:white;padding:0}.card{box-shadow:none}.spider{display:none}}
+</style>
+</head>
+<body>
+    <!-- Inlined images so link works without Pages -->
+    <img src="data:image/jpeg;base64,LzlqLzRBQVFTa1pKUmdBQkFRQUFBUUFCQUFELzRnSW9TVU5EWDFCU1QwWkpURVVBQVFFQUFBSVlZWEJ3YkFRQUFBQnRiblJ5VWtkQ0lGaFpXaUFINWdBQkFBRUFBQUFBQUFCaFkzTndRVkJRVEFBQUFBQkJVRkJNQUFBQUFBQUFBQUFBQUFBQUFBQUFBQTl0WUFBUUFBQUFEVExXRndjR3dBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBcGtaWE5qQUFBQS9BQUFBREJqY0hKMEFBQUJMQUFBQUZCM2RIQjBBQUFCZkFBQUFCUnlXRmxhQUFBQmtBQUFBQlJuV0ZsYUFBQUJwQUFBQUJSaVdGbGFBQUFCdUFBQUFCUnlWRkpEQUFBQnpBQUFBQ0JqYUdGa0FBQUI3QUFBQUN4aVZGSkRBQUFCekFBQUFDQm5WRkpEQUFBQnpBQUFBQ0J0YkhWakFBQUFBQUFBQUFFQUFBQU1aVzVWVXdBQUFCUUFBQUFjQUVRQWFRQnpBSEFBYkFCaEFIa0FJQUJRQUROdGJIVmpBQUFBQUFBQUFBRUFBQUFNWlc1VlV3QUFBRFFBQUFBY0FFTUFid0J3QUhrQWNnQnBBR2NBYUFCMEFDQUFRUUJ3QUhBQWJBQmxBQ0FBU1FCdUFHTUFMZ0FzQUNBQU1nQXdBRElBTWxoWldpQUFBQUFBQUFEMjFRQUJBQUFBQU5Nc1dGbGFJQUFBQUFBQUFJUGZBQUE5di8vLy83dFlXVm9nQUFBQUFBQUFTcjhBQUxFM0FBQUt1VmhaV2lBQUFBQUFBQUFvT0FBQUVRc0FBTWk1Y0dGeVlRQUFBQUFBQXdBQUFBSm1aZ0FBOHFjQUFBMVpBQUFUMEFBQUNsdHpaak15QUFBQUFBQUJERUlBQUFYZS8vL3pKZ0FBQjVNQUFQMlEvLy83b3YvLy9hTUFBQVBjQUFEQWJ2L2JBSVFBQ2drSkVRd1JFUkVSRVJvVEZCTWFHeHNYRnhzYkhoa2JHeHNaSGg0Z0h5RWhIeUFlSUI0akpDTWVJQ0VqSnljaklTUXNLeXdrS3lnb0t6QXJNQ29xSWdFSkJ3Y1BDdzhPRHc4T0ZRNFJEaFVVRXc4UEV4UVhFUklSRWhFWEdSWVVGUlVVRmhrWEZSUVJGQlVYR0JVWkdSVVlHUk1XRXhrWUdSa1lKU2dsSkNULy84SUFFUWdFdUFMUUF3RWlBQUlSQVFNUkFmL0VBTklBQUFNQUF3RUJBUUFBQUFBQUFBQUFBQUFCQWdNRUJRWUhDQUVCQVFFQUF3RUJBQUFBQUFBQUFBQUFBQUVDTXdRRkJnY1FBQUVFQXdFQkFRRUJBUUVCQVFFQUFBRUFBZ01SQkFVU0VBWVRJQlF3RlFjV0Z4RUFBUVFDQWdJREFRRUJBUUFBQUFBQUFRQUNBeEVFRUJJZ0JUQUdCeE5BRkZBVkVnQUJBd0lGQWdVREJBSUNBd0VBQUFBQkFBSVJFQ0VTSUNJeFFUQlJBMUJnWVhFVFFJRWpNa0p3VXBGaW9RUnk4SklUQUFFQkJ3UURBQU1CQUFBQUFBQUFBQUVSQUNFaVFGQmdjVEJ5Z2NFUUlORUNFa0ZSLzlvQUNBRUJBQUFBQU1lMzJPMTBLeHZGamhwNWRYWm5QRnE4YkZrV1NFN0NjVjFSakx4Um5GRk9IaTFzV3ZNN3VMRFVNZEVFemc1ZXB6dVZ5c2NwQ0dEZE1xcXU4dXhrcTZwamJaWkl3YnB3aHBpQlNoUml3ek0rUi9WR09jY3lPb3h0WGFlVjQxbGdWeGJNT0hidHhNT3JTeEU1Vmp1Wndh... (truncated)">
+
+    <div class="max-w-2xl mx-auto my-4 md:my-8">
+      ... (same HTML body as before, images inlined) ...
+    </div>
+</body>
+</html>
