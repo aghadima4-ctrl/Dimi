@@ -73,7 +73,7 @@
 </div>
 
 <script>
-// CRC32 implementation (for zip) - small function
+// CRC32 implementation (for zip)
 function crc32(buf){
   const table = crc32.table || (crc32.table = (function(){
     let c, table=[];
@@ -84,15 +84,11 @@ function crc32(buf){
   for (let i=0;i<buf.length;i++) crc = (crc >>> 8) ^ table[(crc ^ buf[i]) & 0xFF];
   return (crc ^ (-1)) >>> 0;
 }
-
-function str2buf(str){
-  return new TextEncoder().encode(str);
-}
-
 function uint32ToArrayLE(v){ return [v & 0xFF, (v>>>8)&0xFF, (v>>>16)&0xFF, (v>>>24)&0xFF]; }
 function uint16ToArrayLE(v){ return [v & 0xFF, (v>>>8)&0xFF]; }
+function textToUint8(text){ return new TextEncoder().encode(text); }
 
-function makeZip(files){ // files: [{name, dataUint8}]
+function makeZip(files){ // files: [{name, data} where data is Uint8Array
   let localHeaders=[];
   let centralDir=[];
   let offset=0;
@@ -104,23 +100,22 @@ function makeZip(files){ // files: [{name, dataUint8}]
     const uncompSize = data.length;
     // local file header
     const localHeader = [];
-    localHeader.push(...uint32ToArrayLE(0x04034b50)); // signature
-    localHeader.push(...uint16ToArrayLE(20)); // version
-    localHeader.push(...uint16ToArrayLE(0)); // flags
-    localHeader.push(...uint16ToArrayLE(0)); // compression 0=store
-    localHeader.push(...uint16ToArrayLE(0)); // mod time
-    localHeader.push(...uint16ToArrayLE(0)); // mod date
+    localHeader.push(...uint32ToArrayLE(0x04034b50));
+    localHeader.push(...uint16ToArrayLE(20));
+    localHeader.push(...uint16ToArrayLE(0));
+    localHeader.push(...uint16ToArrayLE(0));
+    localHeader.push(...uint16ToArrayLE(0));
+    localHeader.push(...uint16ToArrayLE(0));
     localHeader.push(...uint32ToArrayLE(crc));
     localHeader.push(...uint32ToArrayLE(compSize));
     localHeader.push(...uint32ToArrayLE(uncompSize));
     localHeader.push(...uint16ToArrayLE(nameBuf.length));
-    localHeader.push(...uint16ToArrayLE(0)); // extra len
+    localHeader.push(...uint16ToArrayLE(0));
     const localHeaderBuf = new Uint8Array(localHeader);
 
-    // central dir header
     const central = [];
     central.push(...uint32ToArrayLE(0x02014b50));
-    central.push(...uint16ToArrayLE(0)); // version made by
+    central.push(...uint16ToArrayLE(0));
     central.push(...uint16ToArrayLE(20));
     central.push(...uint16ToArrayLE(0));
     central.push(...uint16ToArrayLE(0));
@@ -130,35 +125,32 @@ function makeZip(files){ // files: [{name, dataUint8}]
     central.push(...uint32ToArrayLE(compSize));
     central.push(...uint32ToArrayLE(uncompSize));
     central.push(...uint16ToArrayLE(nameBuf.length));
-    central.push(...uint16ToArrayLE(0)); // extra
-    central.push(...uint16ToArrayLE(0)); // comment
-    central.push(...uint16ToArrayLE(0)); // disk
-    central.push(...uint16ToArrayLE(0)); // int attr
-    central.push(...uint32ToArrayLE(0)); // ext attr
-    central.push(...uint32ToArrayLE(offset)); // local header offset
+    central.push(...uint16ToArrayLE(0));
+    central.push(...uint16ToArrayLE(0));
+    central.push(...uint16ToArrayLE(0));
+    central.push(...uint16ToArrayLE(0));
+    central.push(...uint32ToArrayLE(0));
+    central.push(...uint32ToArrayLE(offset));
     const centralBuf = new Uint8Array(central);
 
-    // accumulate
     localHeaders.push(localHeaderBuf, nameBuf, data);
     centralDir.push(centralBuf, nameBuf);
 
     offset += localHeaderBuf.length + nameBuf.length + data.length;
   }
 
-  // end of central dir
   let centralSize = centralDir.reduce((s,b)=>s+b.length,0);
   let centralOffset = offset;
   const eocd = [];
   eocd.push(...uint32ToArrayLE(0x06054b50));
-  eocd.push(...uint16ToArrayLE(0)); // disk
-  eocd.push(...uint16ToArrayLE(0)); // start disk
-  eocd.push(...uint16ToArrayLE(centralDir.length/2)); // entries this disk
-  eocd.push(...uint16ToArrayLE(centralDir.length/2)); // total entries
+  eocd.push(...uint16ToArrayLE(0));
+  eocd.push(...uint16ToArrayLE(0));
+  eocd.push(...uint16ToArrayLE(centralDir.length/2));
+  eocd.push(...uint16ToArrayLE(centralDir.length/2));
   eocd.push(...uint32ToArrayLE(centralSize));
   eocd.push(...uint32ToArrayLE(centralOffset));
-  eocd.push(...uint16ToArrayLE(0)); // comment len
+  eocd.push(...uint16ToArrayLE(0));
 
-  // concat all
   const parts = [...localHeaders, ...centralDir, new Uint8Array(eocd)];
   const totalLen = parts.reduce((s,p)=>s+p.length,0);
   const out = new Uint8Array(totalLen);
@@ -166,13 +158,11 @@ function makeZip(files){ // files: [{name, dataUint8}]
   return out;
 }
 
-function downloadBlob(filename, uint8){
-  const blob = new Blob([uint8], {type:'application/zip'});
+function downloadBlob(filename, uint8, mime){
+  const blob = new Blob([uint8], {type:mime||'application/zip'});
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a'); a.href=url; a.download=filename; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
 }
-
-function textToUint8(text){ return new TextEncoder().encode(text); }
 
 function gatherResponse(){
   const name = document.getElementById('name').value.trim();
@@ -182,27 +172,40 @@ function gatherResponse(){
   return { name, adults, children, timestamp };
 }
 
-function onFormSubmit(e){ e.preventDefault(); const r=gatherResponse();
-  // build mailto
+function onFormSubmit(e){
+  e.preventDefault();
+  const r = gatherResponse();
+
+  // prepare mailto
   const to = 'Aghadima4@gmail.com';
   const subject = encodeURIComponent('RSVP: Saer & Yacub - '+r.name);
   const body = encodeURIComponent('Navn: '+r.name+'\nAntal voksne: '+r.adults+'\nAntal børn: '+r.children+'\nTid: '+r.timestamp+'\n');
   const mailto = 'mailto:'+to+'?subject='+subject+'&body='+body;
-  // open mail client
-  window.location.href = mailto;
-  // also prepare a downloadable response file inside a ZIP
+
+  // build invitation HTML snapshot
+  const invitationHtml = '<!doctype html>\n' + document.documentElement.outerHTML;
+  const invitationUint8 = textToUint8(invitationHtml);
   const respText = 'Navn: '+r.name+'\nAntal voksne: '+r.adults+'\nAntal børn: '+r.children+'\nTid: '+r.timestamp+'\n';
   const respUint8 = textToUint8(respText);
-  const zip = makeZip([{name:'rsvp-'+r.name.replace(/[^a-z0-9]/gi,'_')+'.txt', data:respUint8}]);
-  downloadBlob('rsvp-'+(r.name||'response')+'.zip', zip);
+
+  // make a single zip containing the invitation.html and the rsvp text file
+  const nameSafe = (r.name||'response').replace(/[^a-z0-9]/gi,'_');
+  const zip = makeZip([
+    {name:'invitation.html', data:invitationUint8},
+    {name:'rsvp-'+nameSafe+'.txt', data:respUint8}
+  ]);
+
+  // trigger download of the bundle (invitation + response)
+  try{ downloadBlob('rsvp-'+nameSafe+'-bundle.zip', zip); }catch(err){ console.warn('Download failed', err); }
+
+  // then open mail client
+  window.location.href = mailto;
   return false;
 }
 
-// create zip of the full invitation HTML for download
 function downloadInvitationZip(){
-  // get the HTML of this page
-  const docHtml = `<!doctype html>\n${document.documentElement.outerHTML}`;
-  const data = textToUint8(docHtml);
+  const invitationHtml = '<!doctype html>\n' + document.documentElement.outerHTML;
+  const data = textToUint8(invitationHtml);
   const zip = makeZip([{name:'invitation.html', data}]);
   downloadBlob('invitation-offline.zip', zip);
 }
